@@ -64,13 +64,13 @@ sendSMS(senderAddress, receiverAddress, "message", token)
      - return :
         - token
 
- - **showBalanceSMS** : to get token
+ - **showBalanceSMS** : to show balance
     - params :
         - token
      - return :
         - balance
 
- - **getUsageStats** : to get token
+ - **getUsageStats** : to get usage stats
     - params :
         - token
      - return :
