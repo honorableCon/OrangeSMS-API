@@ -46,6 +46,35 @@ senderAdress = "+2210000"
 address = "+221{{receiver}}"
 sendSMS(senderAddress, receiverAddress, "message", token)
 ```
+### Modules 
+
+
+- **sendSMS** : for sending SMS
+  - params : 
+      - senderAddress
+      - receiverAddress
+      - message
+      - token
+  - return
+      - response
+ 
+ - **getToken** : to get token
+    - params :
+        - token
+     - return :
+        - token
+
+ - **showBalanceSMS** : to get token
+    - params :
+        - token
+     - return :
+        - balance
+
+ - **getUsageStats** : to get token
+    - params :
+        - token
+     - return :
+        - stats
 
 #### Contributing 🤝
 
