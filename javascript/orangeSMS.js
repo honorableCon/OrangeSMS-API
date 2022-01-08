@@ -1,12 +1,4 @@
 import fetch from 'node-fetch';
-import { config } from "dotenv";
-
-config()
-
-const clientID = process.env.clientID
-const token = await getToken(clientID)
-let senderAdress = "+2210000"
-let address = "+221{{receiver}}"
 
 async function getToken(clientID){
     const data = await fetch('https://api.orange.com/oauth/v3/token', {
@@ -22,7 +14,7 @@ async function getToken(clientID){
     return data['access_token'];
 }
 
-async function sendSMS(senderAdress, address, message){
+async function sendSMS(senderAdress, address, message, token){
     const data = await fetch(`https://api.orange.com/smsmessaging/v1/outbound/tel:${senderAdress}/requests`, {
         method: 'POST',
         headers: {
@@ -44,8 +36,7 @@ async function sendSMS(senderAdress, address, message){
     return data
 }
 
-
-async function getUsageStats(){
+async function getUsageStats(token){
     const stats = await fetch('https://api.orange.com/sms/admin/v1/statistics', {
         headers: {
             'Authorization': `Bearer ${token}`
@@ -56,7 +47,7 @@ async function getUsageStats(){
     return stats
 }
 
-async function showBalanceSMS() {
+async function showBalanceSMS(token) {
     const balance = fetch('https://api.orange.com/sms/admin/v1/contracts', {
         headers: {
             'Authorization': `Bearer ${token}`
@@ -64,4 +55,8 @@ async function showBalanceSMS() {
     }).then( response => response.json());
 
     return balance
+}
+
+export {
+    sendSMS, showBalanceSMS, getToken, getUsageStats
 }
