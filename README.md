@@ -14,8 +14,6 @@ Instead of reading and trying to understand once again how the Orange SMS API wo
 
 ## Usage ✅
 
-writing...
-
 ### JavaScript 💛
 
 ```javascript
@@ -29,6 +27,9 @@ sendSMS(senderAdress, address, 'message')
 ### Python 🐍
 
 ```python
+clientID="{{your clientID}}"
+token = getToken(clientID)
+sendSMS(senderAddress, receiverAddress, "message", token);
 ```
 
 #### Contributing 🤝
