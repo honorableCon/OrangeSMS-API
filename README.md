@@ -14,6 +14,10 @@ Instead of reading and trying to understand once again how the Orange SMS API wo
 
 Check this [link](https://developer.orange.com/apis/sms-sn/overview) to find the steps of app creation.
 
+## Install 📥
+### Via NPM
+`npm i orange-sms-client`
+
 ## Usage ✅
 
 1. Copy your client id [here](https://developer.orange.com/myapps)
