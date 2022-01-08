@@ -1,8 +1,6 @@
 import json
 import requests
 
-clientID="{{clientID}}"
-
 def getToken(clientID):
     response = requests.post('https://api.orange.com/oauth/v3/token', 
         headers={
@@ -58,6 +56,3 @@ def sendSMS(senderAddress, receiverAddress, message, token):
     response = requests.post(url, headers=headers, data=json.dumps(data))
 
     return response.json()
-
-token = getToken(clientID)
-# code here

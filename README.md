@@ -12,24 +12,39 @@ The registration process is detailed [here](https://developer.orange.com/apis/sm
 
 Instead of reading and trying to understand once again how the Orange SMS API work this gem aims to let you quickly send SMS from JavaScript and Python using the [Orange SMS API](https://developer.orange.com/apis/sms-sn/overview).
 
+Check this [link](https://developer.orange.com/apis/sms-sn/overview) to find the steps of app creation.
+
 ## Usage ✅
+
+1. Copy your client id [here](https://developer.orange.com/myapps)
+(if you have already create an app)
+2. generate token with `getToken` function
+3. send sms with `sendSMS` function
+
+
+Exemple : [usageExample.py](/python/usageExample.py) | [usageExample.js](/javascript/usageExample.js)
 
 ### JavaScript 💛
 
+
 ```javascript
-const clientID = process.env.clientID
+
+const clientID = "your clientID"
 const token = await getToken(clientID)
 let senderAdress = "+2210000"
 let address = "+221{{receiver}}"
-sendSMS(senderAdress, address, 'message')
+sendSMS(senderAdress, address, 'message', token)
 ```
 
 ### Python 🐍
 
 ```python
-clientID="{{your clientID}}"
+
+clientID="your clientID"
 token = getToken(clientID)
-sendSMS(senderAddress, receiverAddress, "message", token);
+senderAdress = "+2210000"
+address = "+221{{receiver}}"
+sendSMS(senderAddress, receiverAddress, "message", token)
 ```
 
 #### Contributing 🤝
